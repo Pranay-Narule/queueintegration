@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -18,7 +19,9 @@ import { MessageProducerService } from './message.producer.service';
     BullModule.registerQueue({
       // all queu must register like this
       name: 'message-queue',
-    }),
+    },
+    // add new name here
+    ),
   ],
   controllers: [AppController],
   providers: [AppService, MessageProducerService, MessageConsumer],
